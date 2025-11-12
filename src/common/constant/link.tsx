@@ -6,22 +6,22 @@ interface NavigationItem {
 const LEFT_LINKS = [
     {
 		title: "Формат участия",
-		href: "/#participation-format",
+		href: "/#how",
 	},
     {
         title: "Для компаний",
-        href: "/#for-companies",
+        href: "/#company",
     },
 ];
 
 const RIGHT_LINKS = [
     {
         title: "Особые программы",
-        href: "/#special-programs",
+        href: "/#programs",
     },
     {
         title: "Контакты",
-        href: "/#contacts",
+        href: "/#footer",
     }
 ]
 

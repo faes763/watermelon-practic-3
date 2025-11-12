@@ -10,9 +10,9 @@ export const Calculation = () => {
     return (
         <section>
             <div className="pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Формат участия</h2>
-                <p className=" text-2xl max-w-3xl mx-auto text-center mt-8">Выберите количество саженцев и узнайте стоимость вашего вклада в восстановление леса</p>
-                <div className="flex gap-40 justify-between mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Формат участия</h2>
+                <p className=" sm:text-2xl text-base max-w-3xl mx-auto text-center mt-8">Выберите количество саженцев и узнайте стоимость вашего вклада в восстановление леса</p>
+                <div className="flex max-sm:flex-col gap-5 sm:gap-40 justify-between sm:mt-24 mt-9">
                     <CalculationForm />
                     <Get />
                 </div>
@@ -36,7 +36,7 @@ const CalculationForm = () => {
     });
 
     return (
-        <div className="border bg-white/5 flex-1 backdrop-blur-xl px-13 py-8 border-white/20 rounded-4xl p-6">
+        <div className="border bg-white/5 flex-1 backdrop-blur-xl sm:px-13 px-9 py-8 border-white/20 rounded-4xl p-6">
             <div className="flex items-center gap-4">
                 <Sprite
                     name="calculator"
@@ -109,7 +109,7 @@ const GET_DATA = [
 
 const Get = () => {
     return (
-        <div className="border bg-white/5 flex-1 backdrop-blur-xl px-13 py-8 border-white/20 rounded-4xl p-6">
+        <div className="border bg-white/5 flex-1 backdrop-blur-xl sm:px-13 px-9 py-8 border-white/20 rounded-4xl p-6">
             <div className="flex items-center gap-4">
                 <Sprite
                     name="face"
@@ -123,7 +123,7 @@ const Get = () => {
                 {GET_DATA.map((item) => (
                     <div 
                         key={item}
-                        className="flex text-2xl gap-4 items-center"
+                        className="flex sm:text-2xl gap-4 items-center"
                     >
                         <div className=" bg-green rounded-full min-w-9 size-9 center">
                             <Sprite

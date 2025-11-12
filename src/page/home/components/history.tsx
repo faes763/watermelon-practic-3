@@ -7,9 +7,9 @@ export const History = () => {
     return (
         <section>
             <div className="pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">История посадок</h2>
-                <p className=" text-2xl max-w-3xl mx-auto text-center mt-8">Реальные люди, реальные деревья, реальный вклад в будущее</p>
-                <div className="grid grid-cols-3 gap-5 mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">История посадок</h2>
+                <p className=" sm:text-2xl text-base max-w-3xl mx-auto text-center mt-8">Реальные люди, реальные деревья, реальный вклад в будущее</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:mt-24 mt-9">
                     {HISTORY_DATA.map((item) => (
                         <HistoryItem key={item.title} {...item} />
                     ))}
@@ -61,7 +61,7 @@ export const HistoryItem = ({title, image, description, region}: typeof HISTORY_
                         className="size-9"
                         pathSprite="icons/filled"
                     />
-                    <p className=" text-xl">{description}</p>
+                    <p className=" sm:text-xl text-base">{description}</p>
                 </div>
             </div>
             

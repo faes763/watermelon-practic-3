@@ -9,11 +9,11 @@ import Image from "next/image";
 
 export const Program = () => {
     return (
-        <section>
+        <section id="programs">
             <div className=" pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Особые программы</h2>
-                <p className=" text-2xl text-center mt-8">Посадка леса — это не только экология, но и важные жизненные события.</p>
-                <div className="space-y-16 mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Особые программы</h2>
+                <p className=" sm:text-2xl text-base text-center mt-8">Посадка леса — это не только экология, но и важные жизненные события.</p>
+                <div className="sm:space-y-16 space-y-8 sm:mt-24 mt-9">
                     {PROGRAM_DATA.map((item, index) => (
                         <ProgramItem key={item.title} {...item} index={index} />
                     ))}
@@ -50,22 +50,26 @@ const PROGRAM_DATA = [
 
 const ProgramItem = ({sprite, title, description, button_text, photo, index }: typeof PROGRAM_DATA[0] & {index: number}) => {
     return (
-        <div className="grid grid-cols-2">
+        <div className="grid max-sm:bg-white/5 max-sm:backdrop-blur-xl max-sm:border max-sm:border-white/20 max-sm:rounded-4xl max-sm:p-8 grid-cols-1 sm:grid-cols-2">
             <Image
                 src={photo}
                 alt={title}
                 width={500}
                 height={500}
-                className={cn("w-full h-full object-cover", index === 1 ? "rounded-r-4xl order-2" : "rounded-l-4xl ")}
+                className={cn("w-full h-full max-sm:rounded-2xl object-cover", index === 1 ? "sm:rounded-r-4xl sm:order-2" : "sm:rounded-l-4xl ")}
             />
             <div className={cn(
-                "bg-white/5 backdrop-blur-xl border border-white/20 rounded-4xl p-20",
-                index === 1 ? "order-1 rounded-r-none" : "rounded-l-none "
+                "sm:bg-white/5 sm:backdrop-blur-xl sm:border sm:border-white/20 sm:rounded-4xl sm:p-20",
+                index === 1 ? "sm:order-1 sm:rounded-r-none" : "sm:rounded-l-none "
             )}>
-                <Sprite name={sprite} className="size-20" pathSprite="icons/filled" />
-                <h3 className="font-bounded mt-13 text-2xl text-green font-bold">{title}</h3>
-                <p className="font-gotham mt-8 text-base font-normal">{description}</p>
-                <Button variant="green" className=" mt-13 rounded-full">
+                <Sprite name={sprite} className="size-20 max-sm:hidden" pathSprite="icons/filled" />
+                <h3 className="font-bounded sm:mt-13 mt-4 sm:text-2xl text-xl text-green font-bold">{title}</h3>
+                <p className="font-gotham mt-8 text-base font-normal max-sm:hidden">{description}</p>
+                <div className="sm:hidden flex gap-3 mt-2.5">
+                    <Sprite name={sprite} className="size-9" pathSprite="icons/filled" />
+                    <p className="text-base font-normal">{description}</p>
+                </div>
+                <Button variant="green" className="max-sm:w-full mt-4 sm:mt-13 rounded-full">
                     {button_text}
                     <ArrowRightIcon className="size-6 -rotate-45" />
                 </Button>

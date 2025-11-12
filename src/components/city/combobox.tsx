@@ -57,7 +57,7 @@ export function CitiesCombobox({ cities=[], className, selectedCity, setSelected
     return (
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
-                <Button variant="outline" className={cn("w-full bg-white border-none justify-between rounded-full max-sm:text-xs", className)}>
+                <Button variant="outline" className={cn("w-full bg-white border-none justify-between rounded-lg max-sm:text-xs", className)}>
                 {selectedCity ? <>{selectedCity.name}</> : <>Выберите город</>}
                 </Button>
             </DrawerTrigger>

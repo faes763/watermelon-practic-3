@@ -4,8 +4,8 @@ import { Providers, TanstackProvider } from "@/common/providers";
 import { Footer, Header } from "@/components";
 import { bounded, gotham } from "@/styles/fonts";
 
-const titleSite = "DCiel Template";
-const descriptionSite = "Default template studio";
+const titleSite = "Сверх арбуз";
+const descriptionSite = "Сверх арбуз - это сайт о деревьях итд";
 
 export const metadata: Metadata = {
 	title: titleSite,

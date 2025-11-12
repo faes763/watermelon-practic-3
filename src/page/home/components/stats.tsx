@@ -6,28 +6,30 @@ export const Stats = () => {
     return (
         <section>   
             <div className=" pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Леса России: цифры и факты</h2>
-                <p className=" text-2xl text-center mt-8">Ежегодно мы теряем больше леса, чем восстанавливаем. Пора действовать, а не просто ставить лайки.</p>
-                <div className="flex justify-between gap-14 mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Леса России: цифры и факты</h2>
+                <p className=" sm:text-2xl text-base text-center mt-8">Ежегодно мы теряем больше леса, чем восстанавливаем. Пора действовать, а не просто ставить лайки.</p>
+                <div className="flex max-sm:flex-col justify-between gap-5 sm:gap-14 sm:mt-24 mt-8">
                     {STATS_DATA.map((item) => (
                         <StatsItem key={item.title} {...item} />
                     ))}
                 </div>
-                <div className="mt-24 font-bounded text-2xl font-bold px-20 py-12 border bg-white/5 relative backdrop-blur-xl border-white/20 rounded-4xl ">
+                <div className="sm:mt-24 mt-9 font-bounded sm:text-2xl text-xl font-bold sm:px-20 sm:py-12 px-5 py-8 border bg-white/5 relative backdrop-blur-xl border-white/20 rounded-4xl ">
                     <div className=" flex items-center justify-between">
                         <p className="  ">Потери леса (вырубка + пожары)</p>
-                        <p>1.7 млн га</p>
+                        <p className=" max-sm:hidden">1.7 млн га</p>
                     </div>
                     <div className=" h-7 w-full bg-green mt-5 rounded-full"/>
+                    <p className=" sm:hidden text-xs text-right mt-1 font-gotham">1.7 млн га</p>
                     <div className=" flex mt-10 items-center justify-between">
                         <p className="  ">Восстановление леса</p>
-                        <p>900 тыс. га</p>
+                        <p className="  max-sm:hidden">900 тыс. га</p>
                     </div>
                     <div className=" h-7 w-full bg-white/5 mt-5 rounded-full">
                         <div className=" h-7 w-[calc(9/17*100%)] bg-green mt-5 rounded-l-full"/>
                     </div>
+                    <p className=" sm:hidden text-xs text-right mt-1 font-gotham">900 тыс. га</p>
 
-                    <div className="mt-13 flex border gap-10 border-white rounded-4xl py-8 px-32">
+                    <div className="mt-13 flex border sm:gap-10 gap-4 border-white rounded-4xl py-8 sm:px-32 px-3">
                         <Sprite name="war" className="size-9" pathSprite="icons/filled" />
                         <div>
                             <p className="text-base font-normal font-gotham">
@@ -70,11 +72,11 @@ const STATS_DATA = [
 
 const StatsItem = ({sprite, title, description}: typeof STATS_DATA[0]) => { 
     return (
-        <div className="border bg-white/5 text-2xl relative flex-1 backdrop-blur-xl px-4 py-12 border-white/20 rounded-4xl ">
+        <div className="border bg-white/5 sm:text-2xl text-base relative flex-1 backdrop-blur-xl px-4 sm:py-12 py-8 border-white/20 rounded-4xl ">
             <div className="center flex-col ">
-                <Sprite name={sprite} className="size-11 mx-auto" pathSprite="icons/filled" />
-                <p className=" font-bounded mt-8 text-2xl font-bold ">{title}</p>
-                <p className=" text-xl mt-1">{description}</p>
+                <Sprite name={sprite} className="sm:size-11 size-9 mx-auto" pathSprite="icons/filled" />
+                <p className=" font-bounded mt-8 sm:text-2xl text-base font-bold ">{title}</p>
+                <p className=" sm:text-xl text-base mt-1">{description}</p>
             </div>
         </div>
     );

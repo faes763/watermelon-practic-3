@@ -7,9 +7,9 @@ export const Guarantees = () => {
     return (
         <section>
             <div className="container pt-24">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Доверие и гарантии</h2>
-                <p className=" text-2xl text-center mt-8">Прозрачность, ответственность и проверенные партнёры</p>
-                <div className="mt-24 flex gap-40 justify-between">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Доверие и гарантии</h2>
+                <p className=" sm:text-2xl text-base text-center mt-8">Прозрачность, ответственность и проверенные партнёры</p>
+                <div className="sm:mt-24 mt-9 flex max-sm:flex-col gap-5 sm:gap-40 justify-between">
                     <Partners />
                     <Docs />
                 </div>
@@ -27,7 +27,7 @@ const PARTNERS_DATA = [
 ]
 const Partners = () => {
     return (
-        <div className="bg-white/5 backdrop-blur-xl border flex-1 border-white/20 rounded-4xl p-14">
+        <div className="bg-white/5 backdrop-blur-xl border flex-1 border-white/20 rounded-4xl sm:p-14 px-8 py-7">
             <div className="flex items-center gap-4">
                 <Sprite
                     name="leader"
@@ -36,11 +36,11 @@ const Partners = () => {
                 />
                 <p className=" font-black text-2xl">Наши партнеры</p>
             </div>
-            <div className=" mt-11 space-y-6">
+            <div className=" sm:mt-11 mt-4 space-y-6">
                 {PARTNERS_DATA.map((item) => (
                     <div 
                         key={item}
-                        className="flex text-2xl gap-4 items-center"
+                        className="flex sm:text-2xl text-base gap-4 items-center"
                     >
                         <div className=" bg-green rounded-full min-w-9 size-9 center">
                             <Sprite
@@ -66,7 +66,7 @@ const DOCS_DATA = [
 
 const Docs = () => {
     return (
-        <div className="bg-white/5 backdrop-blur-xl border flex-1 border-white/20 rounded-4xl p-14">
+        <div className="bg-white/5 backdrop-blur-xl border flex-1 border-white/20 rounded-4xl sm:p-14 px-8 py-7">
         <div className="flex items-center gap-4">
             <Sprite
                 name="docs"
@@ -75,11 +75,11 @@ const Docs = () => {
             />
             <p className=" font-black text-2xl">Документы и гарантии</p>
         </div>
-        <div className=" mt-11 space-y-6">
+        <div className=" sm:mt-11 mt-4 space-y-6">
             {DOCS_DATA.map((item) => (
                 <div 
                     key={item}
-                    className="flex text-2xl gap-4 items-center"
+                    className="flex sm:text-2xl text-base gap-4 items-center"
                 >
                     <div className=" bg-green rounded-full min-w-9 size-9 center">
                         <Sprite

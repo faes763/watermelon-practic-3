@@ -6,11 +6,11 @@ import { cn } from "@/common/utils";
 
 export const Company = () => {
     return (
-        <section>
+        <section id="company">
             <div className="pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Для компаний</h2>
-                <p className=" text-2xl max-w-3xl mx-auto text-center mt-8">Возьмите шефство над гектаром леса. Инвестируйте в экологию и корпоративную социальную ответственность</p>
-                <div className="grid grid-cols-3 gap-5 mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Для компаний</h2>
+                <p className=" sm:text-2xl text-base max-w-3xl mx-auto text-center mt-8">Возьмите шефство над гектаром леса. Инвестируйте в экологию и корпоративную социальную ответственность</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-24">
                     {CARD_DATA.map((item) => (
                         <Card key={item.count} {...item} />
                     ))}
@@ -50,8 +50,9 @@ const Card = ({count, tree_count, price, text, popular}: typeof CARD_DATA[0]) =>
     return (
         <div 
             className={cn(
-                "border-2 bg-white/5 text-2xl relative flex-1 backdrop-blur-xl px-4 py-8 border-white/20 rounded-4xl text-center",
-                popular && "border-green"
+                "border-2 bg-white/5 text-2xl relative flex-1 backdrop-blur-xl px-4 py-8 border-white/20 rounded-4xl text-center max-sm:order-2",
+                popular && "border-green max-sm:order-1",
+
             )}
         >
             {popular && (
@@ -60,7 +61,7 @@ const Card = ({count, tree_count, price, text, popular}: typeof CARD_DATA[0]) =>
                     <p className=" ">Популярное</p>
                 </div>
             )}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col sm:gap-6 gap-4">
                 <p className=" font-bounded text-3xl font-bold ">{count} Гектар</p>
                 <p>{count} га</p>
                 <p>~ {tree_count} саженцев</p>
@@ -68,7 +69,7 @@ const Card = ({count, tree_count, price, text, popular}: typeof CARD_DATA[0]) =>
                 {text.map((item, index) => (
                     <p 
                         key={index}
-                        className="flex text-left gap-4 text-xl items-center"
+                        className="flex text-left gap-4 sm:text-xl text-base items-center"
                     >
                         <Sprite name="duo-check" className="size-6" pathSprite="icons/filled" />
                         {item}

@@ -4,11 +4,11 @@ import { Sprite } from "@/common/ui/sprite";
 
 export const How = () => {
     return (
-        <section>
+        <section id="how">
             <div className="container pt-24">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Как это работает</h2>
-                <p className=" text-2xl text-center mt-8">Простой процесс от заявки до посадки вашего леса</p>
-                <div className="mt-24 space-y-5">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Как это работает</h2>
+                <p className=" sm:text-2xl text-base text-center mt-8">Простой процесс от заявки до посадки вашего леса</p>
+                <div className="sm:mt-24 mt-9 space-y-5">
                     {HOW_DATA.map((item) => (
                         <HowItem key={item.title} {...item} />
                     ))}
@@ -48,13 +48,13 @@ const HOW_DATA = [
 
 const HowItem = ({sprite, title, description}: typeof HOW_DATA[0]) => {
     return (
-        <div className="flex items-center bg-white/5 backdrop-blur-xl border border-white/20 rounded-4xl px-12 py-6 gap-5">
+        <div className="flex max-sm:flex-col items-center bg-white/5 max-sm:backdrop-blur-xl max-sm:border max-sm:border-white/20 max-sm:rounded-4xl sm:px-12 py-6 sm:gap-5 gap-3 max-sm:text-center">
             <div className=" size-20 bg-green rounded-full center">
                 <Sprite name={sprite} className="size-9" pathSprite="icons/filled" />            
             </div>
             <div>
                 <h3 className="font-bounded font-bold">{title}</h3>
-                <p className="font-gotham mt-4 text-base font-normal">{description}</p>
+                <p className="font-gotham mt-4 sm:text-base text-sm font-normal">{description}</p>
             </div>
         </div>
     );

@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export function Footer() {
 	return (
-		<footer className="relative z-50">
+		<footer id="footer" className="relative z-50">
 			<div className="container py-16 bg-black mt-36">
-				<div className="flex gap-20">
+				<div className="flex max-sm:flex-col gap-20">
 					<div className="max-w-md">
 						<p className=" font-bounded text-2xl font-black text-green">Сажаем лес</p>
 						<p className="  mt-5">Восстанавливаем леса России вместе. Каждый саженец — вклад в будущее.</p>

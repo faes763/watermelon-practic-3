@@ -6,9 +6,9 @@ export const TV = () => {
     return (
         <section>
             <div className=" pt-24 container ">
-                <h2 className=" font-bounded text-center text-4xl font-bold">Как это выглядит</h2>
-                <p className=" text-2xl max-w-xl mx-auto text-center mt-8">Видео с квадрокоптера и репортажи о наших посадках</p>
-                <div className="grid grid-cols-2 gap-5 mt-24">
+                <h2 className=" font-bounded text-center sm:text-4xl text-2xl font-bold">Как это выглядит</h2>
+                <p className=" sm:text-2xl text-base max-w-xl mx-auto text-center mt-8">Видео с квадрокоптера и репортажи о наших посадках</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:mt-24 mt-8">
                     {TV_DATA.map((item) => (
                         <TVItem key={item.title} {...item} />
                     ))}
@@ -49,9 +49,9 @@ const TVItem = ({title, description_1, video, description_2, sprite}: typeof TV_
                     />
                     <p className=" font-bounded text-2xl font-bold ">{title}</p>
                 </div>
-                <p className="  text-xl">{description_1}</p>
-                <video controls autoPlay loop src={video} className="w-full h-80 object-cover rounded-2xl mt-4" />
-                <p className=" text-xl mt-4">{description_2}</p>
+                <p className="  sm:text-xl text-base">{description_1}</p>
+                <video controls src={video} className="w-full sm:h-80 h-48 object-cover rounded-2xl mt-4" />
+                <p className=" sm:text-xl text-base mt-4">{description_2}</p>
             </div>
         </div>
     );
