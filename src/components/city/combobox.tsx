@@ -33,7 +33,7 @@ export interface CitiesComboboxProps {
 
 export function CitiesCombobox({ cities=[], className, selectedCity, setSelectedCity }: { cities: ICity[], className?: string } & CitiesComboboxProps) {
     const [open, setOpen] = React.useState(false)
-    const isDesktop = useMediaQuery("(min-width: 768px)")
+    const isDesktop = useMediaQuery("(min-width: 640px)", { initializeWithValue: false });
     
 
 
