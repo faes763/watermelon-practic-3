@@ -1,26 +1,31 @@
-"use client";
-import { CORE_CLIENT_BACKEND } from "@/common/network/core-client";
-import Image from "next/image";
-import { useEffect } from "react";
+import { Background } from "./components/background";
+import { Calculation } from "./components/calculation";
+import { Company } from "./components/company";
+import { Form } from "./components/form";
+import { Guarantees } from "./components/guarantees";
+import { History } from "./components/history";
+import { How } from "./components/how";
+import { Program } from "./components/program";
+import { Stats } from "./components/stats";
+import { TV } from "./components/tv";
+import { Welcome } from "./components/welcome";
 
 export const Home = () => {
-	useEffect(() => {
-		CORE_CLIENT_BACKEND.core_backend.get("/").then((res) => {
-			console.log(res);
-		});
-	}, []);
 	return (
-		<div className="center flex-col">
-			<p className="text-4xl font-bold">DCL</p>
-			<Image
-				src="/page/home/hi.JPG"
-				className="rounded w-80 h-96"
-				fetchPriority="high"
-				priority
-				alt="hi"
-				width={600}
-				height={700}
-			/>
+		<div className="">
+			<div className=" relative z-10">
+				<Welcome />
+				<Calculation />
+				<Company />
+				<History />
+				<TV />
+				<Stats />
+				<Program />
+				<How />
+				<Guarantees />
+				<Form />
+			</div>
+			<Background/>
 		</div>
 	);
 };

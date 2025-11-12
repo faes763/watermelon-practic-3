@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { Providers, TanstackProvider } from "@/common/providers";
 import { Footer, Header } from "@/components";
-import { inter } from "@/styles/fonts";
+import { bounded, gotham } from "@/styles/fonts";
 
 const titleSite = "DCiel Template";
 const descriptionSite = "Default template studio";
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="dark" lang="en">
-			<body className={`${inter.className} antialiased`}>
+			<body className={`${gotham.className} ${gotham.variable} ${bounded.variable} antialiased`}>
 				<TanstackProvider>
 					<Header />
 					{children}
